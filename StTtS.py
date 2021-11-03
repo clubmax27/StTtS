@@ -34,4 +34,5 @@ while True:  # making a loop
 			print("\n")
 			speak(result)
 	except:
+		print("Oops!", sys.exc_info()[0], "occurred.")
 		break
