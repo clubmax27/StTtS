@@ -1,5 +1,6 @@
 from gtts import gTTS
 import os
+import sys
 import playsound
 import speech_recognition as sr
 import keyboard
@@ -18,7 +19,7 @@ MicrophoneList = sr.Microphone.list_microphone_names()
 for i in range(len(MicrophoneList)):
 	print("{0} : {1}".format(i, MicrophoneList[i]))
 
-MicrophoneId = input("Rentez votre ID de Microphone : ")
+MicrophoneId = input("Rentrez votre ID de Microphone : ")
 Microphone = sr.Microphone(device_index=int(MicrophoneId))
 
 Key = input("Quelle touche du clavier active la reconaissance vocale : ")
@@ -35,4 +36,6 @@ while True:  # making a loop
 			speak(result)
 	except:
 		print("Oops!", sys.exc_info()[0], "occurred.")
+		temp = input("Press enter to exit ....")
 		break
+
